@@ -18,7 +18,7 @@ frappe.ui.form.on('Journal Entry Account', {
 	ruta(frm, cdt, cdn) {
 		let row = locals[cdt][cdn];
 
-		frm.set_df_property('accounts', 'reqd', row.ruta, frm.doc.name, 'branch', row.name);
+		// frm.set_df_property('accounts', 'reqd', row.ruta, frm.doc.name, 'branch', row.name);
 
 		if (row.ruta) {
 			frappe.db.get_value('Territory', row.ruta, 'parent_territory', (doc) => {
@@ -34,7 +34,7 @@ frappe.ui.form.on('Journal Entry Account', {
 	branch(frm, cdt, cdn) {
 		let row = locals[cdt][cdn];
 
-		frm.set_df_property('accounts', 'reqd', row.branch, frm.doc.name, 'branch', row.name);
+		// frm.set_df_property('accounts', 'reqd', row.branch, frm.doc.name, 'branch', row.name);
 
 		row.ruta = '';
 		refresh_field('ruta', row.name, 'accounts');
