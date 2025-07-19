@@ -4,7 +4,7 @@ frappe.ui.form.on('Journal Entry Account', {
 		let row = locals[cdt][cdn];
 
 		// If there is Account and account_type is 'Bank', then reqd. Else, not reqd.
-		frm.set_df_property('accounts', 'reqd', (row.account && row.account_type === 'Bank'), frm.doc.name, 'bank_account', row.name);
+		// frm.set_df_property('accounts', 'reqd', (row.account && row.account_type === 'Bank'), frm.doc.name, 'bank_account', row.name);
 
 		if (row.account_type !== 'Bank')
 			return; // If is not a Bank Account, we don't need to fetch the bank account name
